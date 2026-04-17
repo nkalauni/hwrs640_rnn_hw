@@ -820,6 +820,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "ipykernel" },
+    { name = "notebook" },
 ]
 
 [package.metadata]
@@ -839,7 +840,10 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "ipykernel", specifier = ">=6.0.0" }]
+dev = [
+    { name = "ipykernel", specifier = ">=6.0.0" },
+    { name = "notebook", specifier = ">=7.5.5" },
+]
 
 [[package]]
 name = "idna"

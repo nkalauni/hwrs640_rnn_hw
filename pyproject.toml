@@ -30,4 +30,7 @@ url = "https://download.pytorch.org/whl/cu121"
 explicit = true
 
 [tool.uv]
-dev-dependencies = ["ipykernel>=6.0.0"]
+dev-dependencies = [
+    "ipykernel>=6.0.0",
+    "notebook>=7.5.5",
+]
