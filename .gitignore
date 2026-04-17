@@ -214,3 +214,5 @@ outputs/*.pt
 outputs/*.json
 outputs/*.csv
 
+# Python version file (if using pyenv or similar tools)
+.python-version
