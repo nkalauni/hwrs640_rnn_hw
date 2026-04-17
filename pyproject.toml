@@ -1,0 +1,25 @@
+[project]
+name = "hwrs640-rnn-hw"
+version = "0.1.0"
+description = "Streamflow prediction with LSTM and Transformer sequence models"
+readme = "README.md"
+requires-python = ">=3.12.5"
+dependencies = [
+    "aiohttp>=3.13.5",
+    "click>=8.3.2",
+    "matplotlib>=3.10.8",
+    "minicamels",
+    "notebook>=7.5.5",
+    "numpy>=2.4.4",
+    "pandas>=3.0.2",
+    "requests>=2.33.1",
+    "scikit-learn>=1.8.0",
+    "torch>=2.11.0",
+    "tqdm>=4.0.0",
+]
+
+[tool.uv.sources]
+minicamels = { git = "https://github.com/BennettHydroLab/minicamels" }
+
+[tool.uv]
+dev-dependencies = ["ipykernel>=6.0.0"]
