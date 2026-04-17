@@ -3,7 +3,7 @@ name = "hwrs640-rnn-hw"
 version = "0.1.0"
 description = "Streamflow prediction with LSTM and Transformer sequence models"
 readme = "README.md"
-requires-python = ">=3.12.5"
+requires-python = ">=3.12"
 dependencies = [
     "aiohttp>=3.13.5",
     "click>=8.3.2",
@@ -14,7 +14,7 @@ dependencies = [
     "pandas>=3.0.2",
     "requests>=2.33.1",
     "scikit-learn>=1.8.0",
-    "torch>=2.11.0",
+    "torch>=2.4.0",
     "tqdm>=4.0.0",
 ]
 
