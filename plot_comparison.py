@@ -9,16 +9,16 @@ lstm_df = pd.read_csv("outputs/eval_test_lstm.csv", index_col="basin_id")
 trans_df = pd.read_csv("outputs/eval_test_transformer.csv", index_col="basin_id")
 
 metrics = {
-    "nse":   ("NSE",   "higher is better"),
-    "kge":   ("KGE",   "higher is better"),
-    "rmse":  ("RMSE",  "lower is better"),
-    "mae":   ("MAE",   "lower is better"),
-    "pbias": ("|PBIAS|", "lower is better"),
+    "nse":   ("NSE",     "higher is better", (-1,   1)),
+    "kge":   ("KGE",     "higher is better", (-1,   1)),
+    "rmse":  ("RMSE",    "lower is better",  ( 0,   5)),
+    "mae":   ("MAE",     "lower is better",  ( 0,   2)),
+    "pbias": ("|PBIAS|", "lower is better",  ( 0, 150)),
 }
 
 fig, axes = plt.subplots(1, len(metrics), figsize=(18, 4))
 
-for ax, (col, (label, note)) in zip(axes, metrics.items()):
+for ax, (col, (label, note, xlim)) in zip(axes, metrics.items()):
     lstm_vals  = lstm_df[col].abs() if col == "pbias" else lstm_df[col]
     trans_vals = trans_df[col].abs() if col == "pbias" else trans_df[col]
 
@@ -36,6 +36,7 @@ for ax, (col, (label, note)) in zip(axes, metrics.items()):
     ax.set_title(f"{label}\n({note})", fontsize=11)
     ax.legend(fontsize=9)
     ax.grid(True, alpha=0.3)
+    ax.set_xlim(xlim)
     ax.set_ylim(0, 1)
 
 fig.suptitle("LSTM vs Transformer — Test Set Performance (50 basins)", fontsize=13, fontweight="bold")
